@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./NewEventForm.css";
 
 export default function NewEventForm({handleEvents, handleClose}) {
-
+ const [location, setLocation] = useState("");
  const [title, setTitle] = useState("");
  const [date, setDate] = useState("");
 
@@ -21,6 +21,7 @@ export default function NewEventForm({handleEvents, handleClose}) {
   const event = {
    title: title,
    date: date,
+   location: location,
    id: Math.floor(Math.random() * 10000),
   }
   handleEvents(event);
@@ -48,6 +49,15 @@ export default function NewEventForm({handleEvents, handleClose}) {
      onChange={(e) => setDate(e.target.value)}
      value={date}
     />
+   </label>
+
+   <label>
+    <span>Event Location:</span>
+    <select onChange={(e) => setLocation(e.target.value)}>
+     <option value="">Select a Location</option>
+     <option value="New York">New York</option>
+     <option value="San Francisco">San Francisco</option>
+     </select>
    </label>
 
    <button>Submit Form</button>
