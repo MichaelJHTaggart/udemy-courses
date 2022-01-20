@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import EventList from './components/EventList';
 import Modal from './components/Modal';
 import Title from "./components/Title";
 
@@ -12,7 +13,7 @@ function App() {
     { title: 'race on moo moo farm', id: 3 },
   ])
 
-  const handleClick = (id) => {
+  const handleDeleteEvent = (id) => {
     setEvents(
       events.filter((event) => {
         return id !== event.id
@@ -38,22 +39,17 @@ function App() {
         <button onClick={() => setShowEvents(true)}>Show Events</button>
       </div>}
 
-      {
-        showEvents && events.map((event, index) => {
-          return (
-            <div key={event.id}>
-              <h3>{index} - {event.title}</h3>
-              <button onClick={() => { handleClick(event.id) }}>delete event</button>
-            </div>
-          )
-        })
-      }
+      {showEvents && <EventList events={events} handleDeleteEvent={handleDeleteEvent}/>}
 
-  { showModal && <Modal handleClose={handleClose}>
+      <br />
+      <button onClick={() => setShowModal(true)}>Show Modal</button>
+
+{
+  showModal && <Modal handleClose={handleClose}>
         <h1>10% Off Coupon Code!</h1>
         <p>Use the code NINJA10 at the checkout</p>
-      </Modal>}
-
+      </Modal>
+}
     </div>
   );
 }
