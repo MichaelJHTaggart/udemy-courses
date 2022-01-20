@@ -16,3 +16,14 @@
  background: #fff;
  border-radius: 10px;
 }
+
+.modal-backdrop div {
+ border-bottom: 3px solid rgb(112, 107, 107);
+ padding-bottom: 10px;
+}
+
+.modal .sales-btn{
+ border: 4px solid #333;
+ font-size: 18px;
+ text-transform: uppercase;
+}

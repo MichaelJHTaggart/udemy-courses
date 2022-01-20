@@ -1,7 +1,7 @@
 import "./Title.css";
 export default function Title({ title, subtitle }) {
   return (
-  <div>
+  <div style={{display: "inline"}}>
    <h1 className="title">
     {title}
    </h1>
