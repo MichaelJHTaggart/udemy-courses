@@ -1,0 +1,28 @@
+{
+ "trips": [
+  {
+   "id": "trip_00009",
+   "title": "2 Night Stay in Venice",
+   "price": "$12.00",
+   "loc": "Venice"
+  },
+  {
+   "id": "trip_00010",
+   "title": "3 Night Stay in Venice",
+   "price": "13.00",
+   "loc": "Venice"
+  },
+  {
+   "id": "trip_00011",
+   "title": "4 Night Stay in Venice",
+   "price": "14.00",
+   "loc": "Venice"
+  },
+  {
+   "id": "trip_00012",
+   "title": "5 Night Stay in America",
+   "price": "15.00",
+   "loc": "America"
+  }
+ ]
+}
