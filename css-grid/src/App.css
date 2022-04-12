@@ -1,0 +1,32 @@
+.content {
+  display: grid;
+  /* grid-template-columns: 33.3% 20% 50%; */
+  /* grid-template-columns: 1fr 2fr 1fr; */
+  grid-template-columns: repeat(6, 1fr);
+  /* grid-auto-rows: minmax(200px, auto); */
+  grid-template-rows: repeat(5, minmax(200px, auto));
+  /* grid-column-gap: 20px; */
+  gap: 20px;
+}
+
+.firstName {
+  grid-column: 1/3;
+}
+.lastName {
+  grid-column: 3/6;
+}
+.email {
+  grid-column: 1/3;
+  grid-row: 2;
+}
+.somethin {
+  grid-column: 3/6;
+  grid-row: 2;
+}
+.message {
+  grid-column: 1/6;
+}
+.button {
+  grid-column: 2/4;
+  grid-row: 4;
+}
