@@ -1,12 +1,13 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { projectAuth } from '../firebase/config';
 import { useDispatch } from 'react-redux';
-import { loginUser } from '../store/actions/user';
+import { signUpUser } from '../store/actions/user';
 
 export const useSignup = () => {
+  const [isCancelled, setIsCancelled] = useState(false);
   const [error, setError] = useState(null);
   const [isPending, setIsPending] = useState(false);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const signup = async (email, password, displayName) => {
     setError(null);
@@ -24,16 +25,26 @@ export const useSignup = () => {
       }
       //add display name to user
       await res.user.updateProfile({ displayName });
-      
+
       //dispatch login action
-      dispatch(loginUser(res.user))
-      
-      setIsPending(false);
+      dispatch(signUpUser(JSON.parse(JSON.stringify(res.user))));
+
+
+      //update state
+      if (!isCancelled) {
+        setIsPending(false);
+        setError(null);
+      }
     } catch (err) {
       console.log(err.message);
       setError(err.message);
       setIsPending(false);
     }
   };
+
+  useEffect(() => {
+    return () => setIsCancelled(true);
+  }, []);
+
   return { error, isPending, signup };
 };

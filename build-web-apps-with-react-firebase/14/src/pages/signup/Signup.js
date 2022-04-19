@@ -1,17 +1,18 @@
 import styles from './Signup.module.css';
 import { useState } from 'react';
 import { useSignup } from '../../hooks/useSignup';
+import { useNavigate } from 'react-router-dom';
 
 export const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [displayName, setDisplayName] = useState('');
-
+  const navigate = useNavigate();
   const { signup, isPending, error } = useSignup();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    signup(email, password, displayName)
+    signup(email, password, displayName);
   };
 
   return (
@@ -43,7 +44,11 @@ export const Signup = () => {
         />
       </label>
       {!isPending && <button className="btn">Signup</button>}
-      {isPending && <button className='btn' disabled>loading</button>}
+      {isPending && (
+        <button className="btn" disabled>
+          loading
+        </button>
+      )}
       {error && <p>{error}</p>}
     </form>
   );
