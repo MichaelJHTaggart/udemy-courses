@@ -12,7 +12,7 @@ export const useSignup = () => {
   const signup = async (email, password, displayName, thumbnail) => {
     setError(null);
     setIsPending(true);
-    console.log( thumbnail, '<= thumbnail')
+
     try {
       //signup error
       const res = await projectAuth.createUserWithEmailAndPassword(
@@ -24,18 +24,10 @@ export const useSignup = () => {
         throw new Error('Could not complete signup');
       }
 
-
       //upload user thumbnail
-      //? What is upload path doing? 
-      //* This is the path that firebase projectStorage will be using
-      const uploadPath = `thumbnails/${res.user.uid}/${thumbnail.name}`
-      console.log(uploadPath)
-      //? What are we storing in img?
-      //* An object that firebase returns to us. There are different properties, and methods on this object.
-      const img = await projectStorage.ref(uploadPath).put(thumbnail)
-      console.log(img)
-      //* We use one of the methods on the response to get the url for an img.
-      const imgUrl = await img.ref.getDownloadURL()
+      const uploadPath = `thumbnails/${res.user.uid}/${thumbnail.name}`;
+      const img = await projectStorage.ref(uploadPath).put(thumbnail);
+      const imgUrl = await img.ref.getDownloadURL();
 
       //add display name to user && the current live url for their photo
       await res.user.updateProfile({ displayName, photoURL: imgUrl });
@@ -43,9 +35,10 @@ export const useSignup = () => {
       //dispatch login action
       dispatch(signUpUser(JSON.parse(JSON.stringify(res.user))));
 
-
       //update state
+      console.log(isCancelled, '<= value of isCancelled right before if statement');
       if (!isCancelled) {
+        console.log('hit?');
         setIsPending(false);
         setError(null);
       }
@@ -57,7 +50,7 @@ export const useSignup = () => {
   };
 
   useEffect(() => {
-    return () => setIsCancelled(true);
+    return () => setIsCancelled(false);
   }, []);
 
   return { error, isPending, signup };

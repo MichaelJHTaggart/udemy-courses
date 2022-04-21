@@ -19,7 +19,6 @@ const Signup = () => {
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setThumbnail(null);
     let selected = e.target.files?.[0];
-    console.log(selected);
     if (!selected) {
       setThumbnailError('Please select a file');
       return;
@@ -35,7 +34,6 @@ const Signup = () => {
 
     setThumbnailError(null);
     setThumbnail(selected);
-    console.log('thumbnail updated');
   };
 
   return (
