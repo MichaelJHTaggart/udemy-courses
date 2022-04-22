@@ -41,5 +41,6 @@ export const useCollection = (collection, _query, _orderBy) => {
     return () => unsubscribe();
   }, [collection, query, orderBy]);
 
+  console.log(documents)
   return { documents, error };
 };

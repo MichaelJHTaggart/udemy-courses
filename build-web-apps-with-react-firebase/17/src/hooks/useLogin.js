@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../store/actions/user';
-import { projectAuth } from '../firebase/config';
+import { projectAuth, projectFirestore } from '../firebase/config';
 
 export const useLogin = () => {
   const [isCancelled, setIsCancelled] = useState(false);
@@ -13,9 +13,12 @@ export const useLogin = () => {
     setError(null);
     setIsPending(true);
 
-    // sign the user out
+    // sign the user in
     try {
       const res = await projectAuth.signInWithEmailAndPassword(email, password);
+
+      //update online status
+      await projectFirestore.collection('users').doc(res.user.uid).update({online: true})
 
       //dispatch login action
       dispatch(loginUser(JSON.parse(JSON.stringify(res.user))));

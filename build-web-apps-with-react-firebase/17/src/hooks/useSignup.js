@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { projectAuth, projectStorage } from '../firebase/config';
+import { projectAuth, projectStorage, projectFirestore } from '../firebase/config';
 import { useDispatch } from 'react-redux';
 import { signUpUser } from '../store/actions/user';
 
@@ -32,13 +32,17 @@ export const useSignup = () => {
       //add display name to user && the current live url for their photo
       await res.user.updateProfile({ displayName, photoURL: imgUrl });
 
+      await projectFirestore.collection('users').doc(res.user.uid).set({
+        online: true, 
+        displayName,
+        photoURL: imgUrl
+      })
+
       //dispatch login action
       dispatch(signUpUser(JSON.parse(JSON.stringify(res.user))));
 
       //update state
-      console.log(isCancelled, '<= value of isCancelled right before if statement');
       if (!isCancelled) {
-        console.log('hit?');
         setIsPending(false);
         setError(null);
       }
@@ -50,7 +54,7 @@ export const useSignup = () => {
   };
 
   useEffect(() => {
-    return () => setIsCancelled(false);
+    return () => setIsCancelled(true);
   }, []);
 
   return { error, isPending, signup };

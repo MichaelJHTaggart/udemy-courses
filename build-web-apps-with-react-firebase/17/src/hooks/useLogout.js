@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectUserState } from '../store/selectors/user';
 import { logoutUser } from '../store/actions/user';
-import { projectAuth } from '../firebase/config';
+import { projectAuth, projectFirestore } from '../firebase/config';
 
 export const useLogout = () => {
   const [isCancelled, setIsCancelled] = useState(false);
   const [error, setError] = useState(null);
   const [isPending, setIsPending] = useState(false);
+  const { user } = useSelector(selectUserState);
   const dispatch = useDispatch();
 
   const logout = async () => {
@@ -15,6 +17,12 @@ export const useLogout = () => {
 
     // sign the user out
     try {
+      //update online status
+      await projectFirestore
+        .collection('users')
+        .doc(user.uid)
+        .update({ online: false });
+
       await projectAuth.signOut();
 
       //dispatch logout action
