@@ -42,7 +42,7 @@
    -d redirect_uri=https://example-app.com/redirect \
    -d client_id=0oa5dexzkbl87ab2d5d7 \
    -d client_secret=ZDKm19e-qazTUQvRpgiVMLuRedKQYcjW_f-0Hrhn \
-   -d code_verifier=8a6a41e57c5deb278ab8776e847ade37a0287946fe67336d4b12f52f \
+   -d code_verifier=e2e8927c470b7a172d24901d69958e3c6cfd01da5543c004b606dc13 \
    -d code=nufiesANGwpzL7I2sanluYkUt2i3XVO1S4--2UPkz8U
 
 */
@@ -59,11 +59,15 @@
 
 */
 
-// https://dev-49617478.okta.com/oauth2/default/v1/authorize?
-//  response_type=code&
-//  scope=projects&
-//  client_id=0oa5dexzkbl87ab2d5d7&
-//  state=anotherrandom&
-//  redirect_uri=https://example-app.com/redirect&
-//  code_challenge=ghEBV9BXLNLiiTBDZEjvbDbpQYJcg07dsIf2pLMndwY&
-//  code_challenge_method=S256
+/*
+
+https://dev-49617478.okta.com/oauth2/default/v1/authorize?
+ response_type=code&
+ scope=projects&
+ client_id=0oa5dexzkbl87ab2d5d7&
+ state=anotherrandom&
+ redirect_uri=https://example-app.com/redirect&
+ code_challenge=VLATStrP_3E2uxpdWBsLb46hgg9-zxF8WtPaS8kAR8o&
+ code_challenge_method=S256
+
+ */
