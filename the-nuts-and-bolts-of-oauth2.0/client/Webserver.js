@@ -18,6 +18,17 @@
  redirect_uri=https://example-app.com/redirect& //* redirect_uri from the client server (Where we should end up after login is complete)
  code_challenge=ocCks02J_I-YC1ydhEPa674xZ5l3fq-lRPSLdCvMtnI& //* PKCE Code Challenge: Base64-URL-encoded SHA256 hash of the random string you generated previously
  code_challenge_method=S256
+
+ https://dev-49617478.okta.com/oauth2/default/v1/authorize?
+ response_type=code&
+ scope=projects&
+ client_id=0oa5dexzkbl87ab2d5d7&
+ state=anotherrandom&
+ redirect_uri=https://example-app.com/redirect&
+ code_challenge=OgbyBxL45mdesO6MOCapWUz99JUApzlxrW6Q_ZqswGg&
+ code_challenge_method=S256
+
+
 */
 
 // 7. Client app should receive a code in the redirect URL.
@@ -42,8 +53,8 @@
    -d redirect_uri=https://example-app.com/redirect \
    -d client_id=0oa5dexzkbl87ab2d5d7 \
    -d client_secret=ZDKm19e-qazTUQvRpgiVMLuRedKQYcjW_f-0Hrhn \
-   -d code_verifier=e2e8927c470b7a172d24901d69958e3c6cfd01da5543c004b606dc13 \
-   -d code=nufiesANGwpzL7I2sanluYkUt2i3XVO1S4--2UPkz8U
+   -d code_verifier=a2a9caa1d9000c93653268b8d3d9a6660683f804f90d39a0fb5b9638 \
+   -d code=NHwSuKKyeNZTLoZCf4CS_9ZMWh7j1hKawyf4MgBqarM
 
 */
 
@@ -57,6 +68,14 @@
   "scope":"projects"
  }
 
+
+{
+  "token_type":"Bearer",
+  "expires_in":3600,
+  "access_token":"eyJraWQiOiJCNlczSllsWC1GbGtlNndncUFpZWJ0ZExGdUdIWGVRelZfenQxUmozaWVzIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULlpJZ3hTMXpqN1d0T0NVZEtxMmFSUnAtWTdneTN2cG1scXpYc3BCYmx0cG8iLCJpc3MiOiJodHRwczovL2Rldi00OTYxNzQ3OC5va3RhLmNvbS9vYXV0aDIvZGVmYXVsdCIsImF1ZCI6ImFwaTovL2RlZmF1bHQiLCJpYXQiOjE2NTUzMDM5NDIsImV4cCI6MTY1NTMwNzU0MiwiY2lkIjoiMG9hNWRleHprYmw4N2FiMmQ1ZDciLCJ1aWQiOiIwMHU1ZGM1YnhqdmJJSkVHZzVkNyIsInNjcCI6WyJwcm9qZWN0cyJdLCJhdXRoX3RpbWUiOjE2NTUzMDI0NjQsInN1YiI6Ik1pY2hhZWxKSFRhZ2dhcnRAZ2l0aHViLm9rdGFpZHAifQ.d8a9yyZoIU9vYg0MopO8-wBv1d1s44fD-LU_39_Y0Ct2w25gNwOD_CbDC3_6E1Mq8PUwl9XN4z_vTan-uChG5Xa2khaX0ddbHW9poZyRE9l2qQb2BP8RRJNOfG2QSx2EbWcFEQXWQ-9R4_U2EUnk4_YQiFczEIYQh0D8OrjxE3yxpRM_woQAksnmO6dsh8d0SF-ewd63dYw8iBCcrLFsQnGxaN_MRxDx8B1g26S8DZ9aCiiOjx4nVlBMfkVXwz3ETJklgPRsPfi-mOJ8hxAhYvFz8ati9ARxQWfUT78822DM54gZQDHAo2CyaRVwXY4W7pn8_UsmBwFB2KsBis0s-w",
+  "scope":"projects"
+}
+
 */
 
 /*
@@ -67,7 +86,7 @@ https://dev-49617478.okta.com/oauth2/default/v1/authorize?
  client_id=0oa5dexzkbl87ab2d5d7&
  state=anotherrandom&
  redirect_uri=https://example-app.com/redirect&
- code_challenge=VLATStrP_3E2uxpdWBsLb46hgg9-zxF8WtPaS8kAR8o&
+ code_challenge=OgbyBxL45mdesO6MOCapWUz99JUApzlxrW6Q_ZqswGg&
  code_challenge_method=S256
 
  */
