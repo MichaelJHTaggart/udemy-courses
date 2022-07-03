@@ -1,0 +1,102 @@
+/* 
+
+* The core of CSS
+SELECTORS
+? What are they ?
+This is the target where the styles go. This can be ANY attribute || HTML element */
+
+/* Universal Selectors */
+* {
+ color: lightgreen;
+}
+
+/* Type selectors (also known as element selector) */
+p {
+ color: blue;
+}
+
+/* Class Selector */
+.myClass {
+ color: green;
+}
+
+/* ID Selector */
+#myId {
+ color: pink;
+}
+
+/* Grouping Selectors */
+/* ? What does the comma represent ? => all p elements and h1 elements get the following styles */
+p, h1 {
+ color: red;
+}
+
+/* Chaining Selectors */
+/* ? What does these selectors mean together? => Every p element that has a class of .myClass get the following styles */ 
+p.myClass{
+ color: purple;
+}
+
+/* Descendant Combinator */
+/* ? What does these selectors mean together? => The .grandparent class needs to be a present. The space means decscendant. The .child class must be a descendant of the .grandparent class */
+.grandparent .child {
+ color: purple;
+}
+
+/* PROPERTIES */
+/* ? What are properties ? => They are the styling rules */
+/* ? color */
+/*
+names
+rgb => uses 255, 255, 255
+hex => uses 0-9 A-F
+hsl => percentages
+*/
+
+/* ? font-family => "Segoe UI", Tahoma, Verdana, sans-serif; */
+/* "Font Family Name", backup name, backup name, last resort backup name */ 
+
+/* ? font-size */
+/*
+Absolute Values
+px
+
+Relative Length Units
+em
+vw
+vh
+rem
+*/
+
+/* ? font-weight */
+/* ? text-align */
+/* ? Image properties height & width */
+/* Fixed number + auto */
+/* ? border-radius */
+
+/* CASCADE OF CSS */
+/*
+1. Specificity
+2. Inheritance
+3. Rule Order
+*/
+
+/* ADDING CSS TO HTML */
+/*
+-Internal
+-External 
+-In-line => highest priority in all css
+*/
+
+/* BOX MODEL */
+/* Everything is inside a box */
+
+/* DISPLAY PROPERTY */
+/* 
+-block elements (div)
+-inline elements (span)
+-inline-block element (flexbox)
+*/
+
+/* FLEXBOX */
+
