@@ -1,0 +1,15 @@
+div{
+ background-color: bisque;
+}
+h1{
+ color: rgb(69, 55, 36)
+}
+h2{
+ color:#3b7a65
+}
+h3{
+ color:hsl(102, 35%, 35%)
+}
+h4{
+ color:hwb(290 23% 53%)
+}
