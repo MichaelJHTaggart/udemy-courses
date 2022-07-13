@@ -1,0 +1,162 @@
+* {
+  color: #f9faf8;
+  margin: auto;
+}
+header,
+main,
+footer {
+  background-color: #1f2937;
+}
+nav, a {
+  display: flex;
+  height: 10vh;
+}
+nav p strong{
+ font-size: 24px;
+}
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 8vh;
+}
+ul {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+}
+li {
+  list-style: none;
+  padding: 5px;
+}
+li:hover {
+ text-decoration: underline;
+ color: #a0b8e9;
+ cursor: pointer;
+}
+button {
+  background-color: #3882f6;
+  border-radius: 7px;
+  padding: 5px 25px;
+  outline: none;
+  border: none;
+  height: 44px;
+  width: 123px;
+}
+button:hover {
+ background-color: #2b5eb0;
+ cursor: pointer;
+}
+main {
+  background-color: #e5e7eb;
+}
+figure {
+ margin-left: 20px;
+ margin-right: 20px;
+ height: 200px;
+ width: 200px;
+}
+img {
+ height: 100%;
+ width: 100%;
+}
+h1 {
+ font-size: 48px;
+}
+h2 {
+ color: #1f2937;
+ font-size: 36px;
+ line-height: 100px;
+ height: 100px;
+ text-align: center;
+}
+figcaption{
+ color: #6c747d;
+ width: 150px;
+}
+.main_top_section {
+ background-color: white;
+ height: 40vh;
+}
+.box_image {
+ object-fit: cover;
+ border-radius: 25%;
+ transition: 0.2s
+}
+.box_image:hover {
+ transition: 0.2s ease-in-out;
+ border-radius: 5%;
+ cursor: pointer;
+}
+.bot_header_section {
+ background-color: #1f2937;
+ height: 50vh;
+ display: flex;
+ justify-content: center;
+}
+.top_main_section {
+ margin: 0px;
+ background-color: white;
+ height: 42vh;
+}
+.left_section {
+ width: 30vw;
+}
+.left_section p{
+ font-size: 18px;
+}
+.img_placeholder {
+ background-color:#6c747d;
+ line-height: 300px;
+ height: 300px;
+ width: 40vw;
+ text-align: center;
+}
+.top_section {
+ display: flex;
+ justify-content: center;
+ align-content: center;
+}
+.mid_main_section {
+ background-color: #e4e7eb;
+ padding: 90px;
+ display: flex;
+ flex-direction: column;
+}
+.mid_main_section em {
+ color: #1f2937;
+ font-size: 36px;
+}
+.mid_main_section p strong {
+ color: #1f2937;
+ position: relative;
+ font-size: 30px;
+ right: -25vw;
+}
+.bot_main_section{
+ display: flex;
+ color: white;
+ background-color: white;
+ padding: 90px;
+}
+.bot_main_blue{
+ color: white;
+ background-color: #3882f6;
+ display: flex;
+ width: 60vw;
+ height: 10vh;
+ border-radius: 14px;
+ padding: 2vh 10vw 2vh;
+}
+.bot_main_blue div{
+  display: flex;
+  flex-direction: column;
+}
+.bot_main_blue div h3{
+ margin-left: 0px;
+}
+.bot_main_section button {
+ border-width: 2px;
+ border-color: white;
+ border-style: solid;
+}
